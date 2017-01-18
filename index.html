@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="chat-controller.js"></script>
+<link href= "style.css" rel = "stylesheet">
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<!-- CHATBOX CODE BEGIN-->
+
+<div id="live-chat">
+    <header class="header">
+        <span class="chat-close glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        <h4>Stitchophrenic Support</h4>
+    </header>
+    <div class="chat">
+        <div class="chat-history" id="chat-history">
+            <div class="chat-message clearfix">
+                <img src="https://cdn4.iconfinder.com/data/icons/professionals/512/dispatcher-512.png" alt="" width="32" height="32">
+                <h5>Janelle</h5>
+                <div class="chat-message-content seller-chat-message-content clearfix">
+                    
+                    <span class="chat-time">9:00</span>
+
+
+                    <p >Hi! My name is Janelle, how may I assist you today?!</p>
+                </div> <!-- end chat-message-content -->
+            </div> <!-- end chat-message -->
+            <hr>
+
+            <div ng-repeat="message in messages" class="chat-message clearfix">
+            <!--     <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1 " alt="" width="32" height="32">  -->
+                <div class="chat-message-content clearfix">
+                    <span class="chat-time">{{message.timeHours}}:{{message.timeMinutes}}</span>
+                    <p>{{message.content}}</p>
+                </div> <!-- end chat-message-content -->
+                <hr>
+            </div> <!-- end chat-message -->
+        </div> <!-- end chat-history -->
+        <form ng-submit="createMessage()">
+            <input class="" id="message"  ng-model="message.content"  type="text" placeholder="Type your message…" autofocus>
+            <form>
+
+
+    </div> <!-- end chat -->
+</div>
+<!-- CHATBOX CODE END-->
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
